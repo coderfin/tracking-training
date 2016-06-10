@@ -1,7 +1,9 @@
 #Basketball Game Using Color Tracking
 
 ##Demo
-https://coderfin.github.io/tracking-training/
+- Find a yellow, cyan, or magenta colored object or print one of the colored hoops in the content folder.
+- Launch https://coderfin.github.io/tracking-training/.
+- Allow camera use.
 
 ##About
 This prototype basketball game was used for a work training.

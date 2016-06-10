@@ -146,7 +146,7 @@ colorTracker.on("track", (event) => {
                 render: {
                     visible: true,
                     sprite: {
-                        texture: "content/color-hoop.png",
+                        texture: "content/hoop.png",
                         xScale: rect.width/976,
                         yScale: rect.height/711,
                         xOffset: 0.5,
