@@ -103,12 +103,12 @@ Matter.Events.on(engine, "collisionActive", (event) => {
     
         if(pair.bodyB.label === "ball") {
             if(pair.bodyA.label === "basket") {
-                Matter.World.remove(engine.world, [pair.bodyB]);
-                basketsCounter.textContent = baskets++;
+                basketsCounter.textContent = ++baskets;
             } else if(pair.bodyA.label === "ground") {
-                Matter.World.remove(engine.world, [pair.bodyB]);
-                missesCounter.textContent = misses++;
+                missesCounter.textContent = ++misses;
             }
+            
+            Matter.World.remove(engine.world, [pair.bodyB]);
         }
     }
 });
