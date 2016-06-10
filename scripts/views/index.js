@@ -1,10 +1,8 @@
-"use strict";
-
 // Game world settings
-let ballRadius = 30;
-let ballDiameter = 2 * ballRadius;
+var ballRadius = 30;
+var ballDiameter = 2 * ballRadius;
 
-let settings = {
+var settings = {
     ball: {
         radius: ballRadius,
         diameter: ballDiameter,
@@ -32,16 +30,16 @@ let settings = {
 };
 
 // Information about the game world
-let parent = document.querySelector("#world");
-let container = {
+var parent = document.querySelector("#world");
+var container = {
     element: parent,
     height: parent.getBoundingClientRect().height,
     width: parent.getBoundingClientRect().width
 };
 
 // Create the game world
-let engine = Matter.Engine.create();
-let render = Matter.Render.create({
+var engine = Matter.Engine.create();
+var render = Matter.Render.create({
     element: container.element,
     engine: engine,
     options: {
@@ -53,7 +51,7 @@ let render = Matter.Render.create({
 });
 
 // Create the basket and ground
-let basket = Matter.Bodies.rectangle(-100, -100, 100, 100, {
+var basket = Matter.Bodies.rectangle(-100, -100, 100, 100, {
     label: "basket",
     isSensor: true,
     isStatic: true
@@ -77,15 +75,15 @@ Matter.Engine.run(engine);
 Matter.Render.run(render);
 
 // Add random balls
-let getRandomIntInclusive = (min, max) => {
+var getRandomIntInclusive = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-let y = 0;
-let addBall = () => {
-    let x = getRandomIntInclusive(settings.ball.diameter, container.width - settings.ball.diameter);
+var y = 0;
+var addBall = function() {
+    var x = getRandomIntInclusive(settings.ball.diameter, container.width - settings.ball.diameter);
 
-    let ball = Matter.Bodies.circle(x, y, settings.ball.radius, settings.ball.attributes);
+    var ball = Matter.Bodies.circle(x, y, settings.ball.radius, settings.ball.attributes);
 
     Matter.World.add(engine.world, ball);
 };
@@ -93,11 +91,11 @@ let addBall = () => {
 setInterval(addBall, settings.ball.addInterval);
 
 // Handle collisions
-let baskets = 0;
-let misses = 0;
-let basketsCounter = document.querySelector("#baskets em");
-let missesCounter = document.querySelector("#misses em");
-Matter.Events.on(engine, "collisionActive", (event) => {
+var baskets = 0;
+var misses = 0;
+var basketsCounter = document.querySelector("#baskets em");
+var missesCounter = document.querySelector("#misses em");
+Matter.Events.on(engine, "collisionActive", function(event) {
     for(var i = 0; i < event.pairs.length; i++) {
         var pair = event.pairs[i];
     
@@ -114,16 +112,16 @@ Matter.Events.on(engine, "collisionActive", (event) => {
 });
 
 // Setup color tracking
-let colorTracker = new tracking.ColorTracker(settings.tracking.colors);
+var colorTracker = new tracking.ColorTracker(settings.tracking.colors);
 
-colorTracker.on("track", (event) => {
+colorTracker.on("track", function(event) {
     if(event.data.length !== 0) {
-        event.data.forEach((rect) => {
-            let xOffset = (rect.width/2);
-            let yOffset = (rect.height/2);
+        event.data.forEach(function(rect) {
+            var xOffset = (rect.width/2);
+            var yOffset = (rect.height/2);
 
-            let x = container.width - (rect.x + xOffset); // Subtract from container.width because video is a mirror image
-            let y = rect.y + yOffset;
+            var x = container.width - (rect.x + xOffset); // Subtract from container.width because video is a mirror image
+            var y = rect.y + yOffset;
 
             Matter.Body.set(basket, {
                 vertices: [ {
