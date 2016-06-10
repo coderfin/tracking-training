@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basketball Game Using Color Tracking</title>
+    <link rel="stylesheet" href="/styles/views/index.css">
+</head>
+<body>
+    <main>
+        <h2 id="baskets">Baskets: <em>0</em></h2>
+        <h2 id="misses">Misses: <em>0</em></h2>
+        <section id="container">
+            <section id="world"></section>
+            <video id="video" preload autoplay loop muted></video>
+        </section>
+    </main>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tracking.js/1.1.2/tracking-min.js"></script>
+    <script src="/scripts/views/index.js"></script>
+</body>
+</html>

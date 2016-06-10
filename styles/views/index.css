@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0 auto;
+    width: 90rem;
+}
+
+h1, h2 {
+    color: gray;
+    font-weight: 300;
+    margin: 2rem 0 0 0;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2 {
+    display: inline-block;
+    font-size: 2rem;
+}
+
+h2 + h2 {
+    margin-left: 4rem;
+}
+
+em {
+    font-weight: bold;
+}
+
+#baskets em {
+    color: green;
+}
+
+#misses em {
+    color: red;
+}
+
+#container {
+    margin-top: 2rem;
+    position: relative;
+}
+
+#world {
+    height: 67.7rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#video {
+    transform: rotateY(180deg);
+    width: 100%;
+}
