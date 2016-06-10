@@ -15,4 +15,4 @@ It does not represent a complete working game; there are bugs, quirks, and missi
 In order to run this project you need a web server running at the root directory.
 I like to use [`live-server`](https://www.npmjs.com/package/live-server) for quick testing and live reload.
 
-### This code has only been tested in version 51 of Chrome on a MacBook Pro
+##### This code has only been tested in version 51 of Chrome on a MacBook Pro
